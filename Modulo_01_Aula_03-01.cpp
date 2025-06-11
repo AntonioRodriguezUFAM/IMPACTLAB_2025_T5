@@ -50,7 +50,7 @@ int main() {
 		image << "255 0 0" << endl;		// Red
 		image << "0 255  0" << endl;	//Green
 		image << "0 0 255" << endl;		//Blue
-		image << "255 255 0" << endl;	//yellow
+		image << "255 255 0" << endl;	//yellowf
 		image << "255 255 255" << endl; //white
 		image << "0 0 0" << endl;		//black
 		*/
