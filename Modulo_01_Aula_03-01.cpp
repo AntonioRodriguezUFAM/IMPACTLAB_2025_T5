@@ -57,7 +57,7 @@ int main() {
 
 		for (int ImgH = 0; ImgH < 100; ImgH++) {
 			for(int ImhV = 0; ImhV < 100; ImhV++) {
-				image << "255 0 100" << endl;		// Red
+				image << "255 0 100" << endl;		// Pixel values:RGB,  Red
 			}
 		}
 	}
