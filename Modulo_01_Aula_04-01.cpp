@@ -17,7 +17,7 @@ int main() { // Thread
   
 // Write Image
 	ofstream Image_write;
-	Image_write.open("images/output/input_out.ppm");
+	Image_write.open("images/output/input_out_G_R.ppm");
 
 	// Copy Memory
 	//Image_Read >> memory>> Image_Write
@@ -64,6 +64,31 @@ int main() { // Thread
 		Image_Read >> red;
 		Image_Read >> green;
 		Image_Read >> blue;
+
+        // Converte String (red) to number(intRed) -- int num = std::stoi(str);
+        
+        int intRed = stoi(red);
+        int intGreen = stoi(green);
+        int intBlue = stoi(blue);
+        //std::cout << "Red: " << intRed << ", Green: " << intGreen << ", Blue: " << intBlue << endl;
+
+        //Filter RGB values to green
+		intGreen = intGreen * 2; // Increase green value
+		if (intGreen > 255) { // Ensure it does not exceed the maximum value
+			intGreen = 255; // Cap it at 255
+		}
+
+		intRed = intRed / 2; // Decrease red value
+		if (intRed < 0) { // Ensure it does not go below 0
+			intRed = 0; // Cap it at 0
+		}
+
+        
+		// Convert back to string for writing
+		red = to_string(intRed);
+		green = to_string(intGreen);
+		blue = to_string(intBlue);
+
 
 		// Memory to Write to new Images
 		Image_write << red << " " << green << " " << blue << " " ;//<< endl;
